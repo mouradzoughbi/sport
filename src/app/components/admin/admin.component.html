@@ -1,0 +1,43 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 ml-auto">
+        <h1 class="text-white">{{title| uppercase |reverse |astrix}}</h1>
+        <h3 >{{ actualDate|date:'M/d/yy, h:mm a'}}</h3>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="match-tab" data-toggle="tab" href="#match" role="tab" aria-controls="match" aria-selected="true">Matches</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="player-tab" data-toggle="tab"href="#player" role="tab" aria-controls="player" aria-selected="false">Players</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="team-tab" data-toggle="tab" href="#team" role="tab" aria-controls="team" aria-selected="false">Teams</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="stadium-tab" data-toggle="tab" href="#stadium" role="tab" aria-controls="stadium" aria-selected="false">Stadium</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="match" role="tabpanel" aria-labelledby="match-tab">
+    <app-matches-table></app-matches-table>
+   </div>
+  <div class="tab-pane fade" id="player" role="tabpanel" aria-labelledby="player-tab">
+    <app-player-table></app-player-table>
+    </div>
+  <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+   <app-teams-table></app-teams-table>
+    </div>
+    <div class="tab-pane fade" id="stadium" role="tabpanel" aria-labelledby="stadium-tab">
+      <app-stadium-table></app-stadium-table>
+       </div>
+</div>

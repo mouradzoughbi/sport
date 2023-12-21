@@ -1,0 +1,43 @@
+<div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 ml-auto">
+                <h1 class="text-white">Search Weather</h1>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="margin-top: 50px;">
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form [formGroup]="searchForm">
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="city" placeholder="City....">
+                </div>
+                <div
+                    *ngIf="searchForm.controls['city'].invalid && (searchForm.controls['city'].touched || searchForm.controls['city'].dirty )">
+                    <div *ngIf="searchForm.controls['city'].errors?.['required']">
+                        city is required
+
+                    </div>
+                </div>
+                 
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary py-3 px-5" value=" search" (click)="search()">
+                </div>
+            </form>
+
+        </div>
+    
+    <div>
+    <p>Temperature:{{weatherResult.temperature}}</p>
+    <p>Tressure:{{weatherResult.pressure}}</p>
+    <p>Humidity:{{weatherResult.humidity}}</p>
+    <p>Wind Speed:{{weatherResult.speed}}</p>
+    <img [src]="weatherResult.icone" alt=""> 
+</div>
+</div>
